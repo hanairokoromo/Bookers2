@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Bookers2Ver2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scal=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -24,7 +24,10 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to "Home", root_path %>
+                <%= link_to root_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-house"></i>
+                <span class="icon-name">Home</span>
+                <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to "Users", user_path(current_user.id) %>
@@ -37,7 +40,9 @@
               </li>
               <% else %>
               <li class="nav-item">
-                <%= link_to "Home", root_path %>
+                <%= link_to root_path, class:"btn btn-link" do %>
+                <i class="fa-light fa-house" aria-hidden="true">Home</i>
+                <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to "About", about_path %>
