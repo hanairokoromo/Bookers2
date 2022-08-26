@@ -1,7 +1,13 @@
-<div>
-    <h2>User info</h2>
-    <%= image_tag users.get_profile_image(100, 100) %>
-    <h3>name <%= users.name %></h3>
-    <h3>introduction <%= @user.introduction %></h3>
-    <p><%= link_to "Edit", edit_user_path %></p>
-</div>
+<%= form_with model: books do |f| %>
+  <div class="form-group">
+    <label for="book_title">Title</label>
+      <%= f.text_field :title, class: "form-control book_title" %>
+  </div>
+  <div class="form-group">
+    <label for="book_opinion">Opinion</label>
+      <%= f.text_area :body, class: "form-control book_body" %>
+  </div>
+  <div class="form-group">
+      <%= f.submit 'Create Book', class: "btn btn-success" %>
+  </div>
+<% end %>
