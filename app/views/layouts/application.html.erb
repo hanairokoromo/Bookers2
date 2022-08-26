@@ -3,6 +3,7 @@
   <head>
     <title>Bookers2Ver2</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scal=1">
+    <script src="https://kit.fontawesome.com/1b2f943c3c.js" crossorigin="anonymous"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -25,33 +26,52 @@
               <% if user_signed_in? %>
               <li class="nav-item">
                 <%= link_to root_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-house"></i>
-                <span class="icon-name">Home</span>
+                <i class="fa-solid fa-house" style="color: white;"></i>
+                <span class="icon-name text-light">Home</span>
+                <% end %>
+              </li>
+              <li class="nav-item ml-auto">
+                <%= link_to user_path(current_user.id), class: "btn btn-link" do %>
+                <i class="fa-solid fa-users" style="color: white;"></i>
+                <span class="icon-name text-light">Users</span>
+                <% end %>
+              </li>
+              <li class="nav-item ml-auto">
+                <%= link_to books_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-book-open" style="color: white;"></i>
+                <span class="icon-name text-light">Books</span>
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to "Users", user_path(current_user.id) %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Books", books_path %>
-              </li>
-              <li class="nav-item">
-                <%= link_to "Log out",destroy_user_session_path, method: :delete %>
+                <%= link_to "Log out",destroy_user_session_path, method: :delete, class: "btn btn-link" do %>
+                <i class="fa-solid fa-right-from-bracket" style="color: white;"></i>
+                <span class="icon-name text-light">Log out</span>
+                <% end %>
               </li>
               <% else %>
               <li class="nav-item">
-                <%= link_to root_path, class:"btn btn-link" do %>
-                <i class="fa-light fa-house" aria-hidden="true">Home</i>
+                <%= link_to root_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-house" style="color: white;"></i>
+                <span class="icon-name text-light">Home</span>
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to "About", about_path %>
+                <%= link_to about_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-link" style="color: white;"></i>
+                <span class="icon-name text-light">About</span>
+                <% end %>
               </li>
-              <li>
-                <%= link_to "Sign up", new_user_registration_path %>
+              <li class="nav-item">
+                <%= link_to new_user_registration_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-user-plus" style="color: white;"></i>
+                <span class="icon-name text-light">Sign up</span>
+                <% end %>
               </li>
-              <li>
-                <%= link_to "Log in", new_user_session_path %>
+              <li class="nav-item">
+                <%= link_to new_user_session_path, class: "btn btn-link" do %>
+                <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+                <span class="icon-name text-light">Log in</span>
+                <% end %>
               </li>
               <% end %>
             </ul>
