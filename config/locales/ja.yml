@@ -1,0 +1,13 @@
+user_sessions:
+
+new:
+
+ create:
+
+ success: "Welcome! You have signed up successfully."
+
+ fail: "error"
+
+ destroy:
+
+ success: "Signed out successfully."

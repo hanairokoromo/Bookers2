@@ -80,16 +80,9 @@
       </nav>
     </header>
     <main class="mb-auto">
-      <% if flash[:notice] %>
-      <div class="alert alert-info">
-        <%= flash[:notice] %>
-      </div>
-      <% end %>
-      <% if flash[:alert] %>
-        <div class="alert alert-danger">
-          <%= flash[:alert] %>
-        </div>
-      <% end %>
+      <% flash.each do |message_type, message| %>
+　　　<div class="alert alert-<%= message_type %>"><%= message %></div>
+　　　<% end %>
     <%= yield %>
     </main>
     <footer>
