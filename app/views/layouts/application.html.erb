@@ -25,51 +25,51 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to root_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-house" style="color: white;"></i>
+                <%= link_to user_path(current_user), class: "btn btn-link" do %>
+                <i class="fas fa-home" style="color: white;"></i>
                 <span class="icon-name text-light">Home</span>
                 <% end %>
               </li>
               <li class="nav-item ml-auto">
-                <%= link_to user_path(current_user.id), class: "btn btn-link" do %>
-                <i class="fa-solid fa-users" style="color: white;"></i>
+                <%= link_to users_path, class: "btn btn-link" do %>
+                <i class="fas fa-users" style="color: white;"></i>
                 <span class="icon-name text-light">Users</span>
                 <% end %>
               </li>
               <li class="nav-item ml-auto">
                 <%= link_to books_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-book-open" style="color: white;"></i>
+                <i class="fas fa-book-open" style="color: white;"></i>
                 <span class="icon-name text-light">Books</span>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-link" do %>
-                <i class="fa-solid fa-right-from-bracket" style="color: white;"></i>
+                <i class="fas fa-sign-out-alt" style="color: white;"></i>
                 <span class="icon-name text-light">Log out</span>
                 <% end %>
               </li>
               <% else %>
               <li class="nav-item">
                 <%= link_to root_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-house" style="color: white;"></i>
+                <i class="fas fa-home" style="color: white;"></i>
                 <span class="icon-name text-light">Home</span>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to about_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-link" style="color: white;"></i>
+                <i class="fas fa-link" style="color: white;"></i>
                 <span class="icon-name text-light">About</span>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to new_user_registration_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-user-plus" style="color: white;"></i>
+                <i class="fas fa-user-plus" style="color: white;"></i>
                 <span class="icon-name text-light">Sign up</span>
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to new_user_session_path, class: "btn btn-link" do %>
-                <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+                <i class="fas fa-sign-in-alt" style="color: white;"></i>
                 <span class="icon-name text-light">Log in</span>
                 <% end %>
               </li>
